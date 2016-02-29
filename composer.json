@@ -1,6 +1,7 @@
 {
     "name": "sasik-github/gcm",
     "description": "Google Cloud Messaging library",
+    "minimum-stability": "master",
     "authors": [
         {
             "name": "Alexandr Spesivtsev",
