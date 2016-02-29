@@ -1,0 +1,19 @@
+{
+    "name": "sasik-github/gcm",
+    "description": "Google Cloud Messaging library",
+    "authors": [
+        {
+            "name": "Alexandr Spesivtsev",
+            "email": "dart_sas@mail.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "guzzlehttp/guzzle": "^6.1"    
+    },
+    "autoload": {
+        "psr-4": {
+          "Sasik\\GCM\\": "src/"
+        }
+    }
+}
