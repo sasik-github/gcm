@@ -1,6 +1,6 @@
 <?php
 
-namespace Sasik\GSM;
+namespace Sasik\GCM;
 
 use GuzzleHttp\Client;
 

@@ -5,7 +5,7 @@
  * Time: 11:01 PM
  */
 
-namespace Sasik\GSM;
+namespace Sasik\GCM;
 
 
 use Psr\Http\Message\ResponseInterface;
