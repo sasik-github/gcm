@@ -40,7 +40,7 @@ class CloudMessaging
         return self::send($toToken, $preparedData);
     }
 
-    private function send($toToken, $preparedData)
+    private static function send($toToken, $preparedData)
     {
 
         $json = [
