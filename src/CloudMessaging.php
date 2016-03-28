@@ -17,8 +17,38 @@ class CloudMessaging
      * @param $data
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public static function send($toToken, $data)
+    public static function sendToAndroid($toToken, $data)
     {
+        $preparedData = [];
+        $preparedData['data'] = $data;
+
+        return self::send($toToken, $preparedData);
+    }
+
+    public function sendToIOS($toToken, $data)
+    {
+        $preparedData = [
+            'content_available' => true,
+            'notification' => [
+                'sound' => 'default',
+                'badge' => '1',
+                'title' => 'default',
+                'body' => $data,
+            ],
+        ];
+
+        return self::send($toToken, $preparedData);
+    }
+
+    private function send($toToken, $preparedData)
+    {
+
+        $json = [
+            'registration_ids' => [$toToken]
+        ];
+
+        $json = array_merge($json, $preparedData);
+
         $client = new Client([
             'base_uri' => 'https://gcm-http.googleapis.com/gcm/send',
         ]);
@@ -27,10 +57,7 @@ class CloudMessaging
                 'Authorization' => 'key=' . self::getAppKey(),
                 'Content-Type' => 'application/json',
             ],
-            'json' => [
-                'registration_ids' => [$toToken],
-                'data' => $data,
-            ],
+            'json' => $json,
             'http_errors' => false,
         ]);
         return $response;
