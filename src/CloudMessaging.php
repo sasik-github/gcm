@@ -25,7 +25,7 @@ class CloudMessaging
         return self::send($toToken, $preparedData);
     }
 
-    public function sendToIOS($toToken, $data)
+    public static function sendToIOS($toToken, $data)
     {
         $preparedData = [
             'content_available' => true,
