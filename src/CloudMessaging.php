@@ -42,7 +42,7 @@ class CloudMessaging
             'content_available' => true,
             'notification' => [
                 'sound' => 'default',
-                'badge' => '1',
+                'badge' => '0',
                 'title' => 'default',
                 'body' => $message,
             ],
