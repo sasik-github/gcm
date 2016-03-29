@@ -28,7 +28,7 @@ class CloudMessaging
     public static function sendToIOS($toToken, $data)
     {
         $message = '';
-        if (array_key_exists('message', $message)) {
+        if (array_key_exists('message', $data)) {
             $message = $data['message'];
         }
 
