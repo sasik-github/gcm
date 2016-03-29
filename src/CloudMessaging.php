@@ -25,6 +25,12 @@ class CloudMessaging
         return self::send($toToken, $preparedData);
     }
 
+    /**
+     * В $date должен быть ключ message
+     * @param $toToken
+     * @param $data
+     * @return \Psr\Http\Message\ResponseInterface
+     */
     public static function sendToIOS($toToken, $data)
     {
         $message = '';
