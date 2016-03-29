@@ -27,14 +27,20 @@ class CloudMessaging
 
     public static function sendToIOS($toToken, $data)
     {
+        $message = '';
+        if (array_key_exists('message', $message)) {
+            $message = $data['message'];
+        }
+
         $preparedData = [
             'content_available' => true,
             'notification' => [
                 'sound' => 'default',
                 'badge' => '1',
                 'title' => 'default',
-                'body' => $data,
+                'body' => $message,
             ],
+            'aps' => $data,
         ];
 
         return self::send($toToken, $preparedData);
