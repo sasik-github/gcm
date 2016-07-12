@@ -40,6 +40,7 @@ class CloudMessaging
 
         $preparedData = [
             'content_available' => true,
+            'priority' => 'high',
             'notification' => [
                 'sound' => 'default',
                 'badge' => '0',
